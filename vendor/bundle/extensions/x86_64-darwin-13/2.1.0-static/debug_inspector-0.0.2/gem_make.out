@@ -1,0 +1,12 @@
+/Users/forrestparker/.rbenv/versions/2.1.2/bin/ruby -r ./siteconf20141114-49447-1jcjb7y.rb extconf.rb 
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20141114-49447-zv12cz
+installing default debug_inspector libraries

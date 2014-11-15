@@ -1,0 +1,532 @@
+have_func: checking for rb_gc_stat()... -------------------- yes
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_stat; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_gc_count()... -------------------- yes
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_count; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_os_allocated_objects()... -------------------- no
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'rb_os_allocated_objects'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_os_allocated_objects; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_os_allocated_objects; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'rb_os_allocated_objects' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { rb_os_allocated_objects(); return 0; }
+              ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_rb_os_allocated_objects", referenced from:
+      _t in conftest-460278.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { rb_os_allocated_objects(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_gc_allocated_size()... -------------------- no
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'rb_gc_allocated_size'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_allocated_size; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_allocated_size; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'rb_gc_allocated_size' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { rb_gc_allocated_size(); return 0; }
+              ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_rb_gc_allocated_size", referenced from:
+      _t in conftest-0af393.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { rb_gc_allocated_size(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_gc_collections()... -------------------- no
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'rb_gc_collections'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_collections; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_collections; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'rb_gc_collections' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { rb_gc_collections(); return 0; }
+              ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_rb_gc_collections", referenced from:
+      _t in conftest-cc6cef.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { rb_gc_collections(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_gc_time()... -------------------- no
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'rb_gc_time'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_time; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_time; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'rb_gc_time' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { rb_gc_time(); return 0; }
+              ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_rb_gc_time", referenced from:
+      _t in conftest-e56426.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { rb_gc_time(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_gc_total_time()... -------------------- no
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'rb_gc_total_time'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_total_time; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_total_time; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'rb_gc_total_time' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { rb_gc_total_time(); return 0; }
+              ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_rb_gc_total_time", referenced from:
+      _t in conftest-853482.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { rb_gc_total_time(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_gc_total_mallocs()... -------------------- no
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'rb_gc_total_mallocs'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_total_mallocs; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_total_mallocs; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'rb_gc_total_mallocs' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { rb_gc_total_mallocs(); return 0; }
+              ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_rb_gc_total_mallocs", referenced from:
+      _t in conftest-87b969.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { rb_gc_total_mallocs(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_gc_total_malloced_bytes()... -------------------- no
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'rb_gc_total_malloced_bytes'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_total_malloced_bytes; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_total_malloced_bytes; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'rb_gc_total_malloced_bytes' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { rb_gc_total_malloced_bytes(); return 0; }
+              ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_rb_gc_total_malloced_bytes", referenced from:
+      _t in conftest-b78cf3.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { rb_gc_total_malloced_bytes(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_heap_total_mem()... -------------------- no
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'rb_heap_total_mem'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_heap_total_mem; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_heap_total_mem; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'rb_heap_total_mem' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { rb_heap_total_mem(); return 0; }
+              ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_rb_heap_total_mem", referenced from:
+      _t in conftest-ec1f37.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { rb_heap_total_mem(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_gc_heap_info()... -------------------- no
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'rb_gc_heap_info'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_heap_info; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_gc_heap_info; return 0; }
+/* end */
+
+"clang -o conftest -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/forrestparker/.rbenv/versions/2.1.2/include/ruby-2.1.0 -I. -I/Users/forrestparker/.rbenv/versions/2.1.2/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib -L. -L/Users/forrestparker/.rbenv/versions/2.1.2/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'rb_gc_heap_info' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { rb_gc_heap_info(); return 0; }
+              ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_rb_gc_heap_info", referenced from:
+      _t in conftest-ef42c8.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { rb_gc_heap_info(); return 0; }
+/* end */
+
+--------------------
+
